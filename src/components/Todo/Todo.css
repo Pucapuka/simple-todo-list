@@ -1,0 +1,66 @@
+.todo-wrap {
+  background-color: #fefefe;
+  padding: 10px;
+  margin: 0 auto;   /* <-- centraliza horizontalmente */
+  box-sizing: border-box;
+  /* width: 90%;          opcional, ajusta a largura visível */
+  max-width: 1000px;   /* evita ficar largo demais em telas grandes */
+}
+
+.todo-wrap table{
+    position: fixed;
+    width: 100vw;
+}
+
+.todo-wrap th,
+.todo-wrap td{
+    padding: 12px 16px;
+    padding-top: 0;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.todo-wrap th{
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.add-task {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-btn{
+    background-color: #fefefe;
+    margin-bottom: 20px;
+}
+
+.add-task.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin: 0px auto; */
+  margin-bottom: 50px;
+  height: 40px;
+  width: 95vw;
+  gap: 10px;
+  padding: 1rem;
+  background-color: #fefefe;
+  border-radius: 10px;
+}
+
+
+.add-task input,
+.add-task select {
+  padding: 3px 3px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.form-btns{
+    display: flex;
+    flex-direction: row;
+}
