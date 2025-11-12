@@ -71,6 +71,11 @@ export default function Todo(){
         setEditedTask({...editedTask, [field]: value});
     };
 
+    const isOverdue = (deadline:string): boolean => {
+        const today = new Date();
+        const dueDate = new Date(deadline);
+        return dueDate < today;
+    }
 
     if(loading) return <div>Loading...</div>;
     
@@ -157,7 +162,7 @@ export default function Todo(){
                                         <option>Overdue</option>
                                     </select>
                                 ) : (
-                                    task.status
+                                    isOverdue(task.deadline) && task.status !== 'Done'? 'Overdue' : task.status
                                 )}
                             </td>
                             <td>
