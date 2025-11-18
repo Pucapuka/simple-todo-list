@@ -77,6 +77,13 @@ export default function Todo(){
         return dueDate < today;
     }
 
+    const formatDate = (dateString: string) => {
+        if(!dateString) return "";
+
+        const[year, month, day] = dateString.split("-");
+        return `${month}/${day}/${year}`;
+    }
+
     if(loading) return <div>Loading...</div>;
     
     return(
@@ -147,7 +154,7 @@ export default function Todo(){
                                         onChange = {(e) => handleChange('deadline', e.target.value)}
                                     />
                                 ) : (
-                                    task.deadline
+                                    formatDate(task.deadline)
                                 )}
                             </td>
                             <td>
